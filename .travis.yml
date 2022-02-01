@@ -4,6 +4,11 @@ os:
 dist: xenial
 
 language: python
-
+addons:
+  sonarcloud:
+    organization: "gopapy" # the key of the org you chose at step #3
+    token:
+      secure: 8444cbf8d9177909f80e39a0f8ca41b392ccd50a # encrypted value of your token
 script:
   - python -m pytest -v
+  - sonar-scanner
