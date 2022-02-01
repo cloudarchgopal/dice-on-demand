@@ -6,9 +6,13 @@ dist: xenial
 language: python
 addons:
   sonarcloud:
-    organization: "gopapy" # the key of the org you chose at step #3
+    organization: "testgopal"
     token:
-      secure: "8444cbf8d9177909f80e39a0f8ca41b392ccd50a" # encrypted value of your token
+      secure: "**************************" # encrypted value of your token
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - sonar-scanner
 script:
   - python -m pytest -v
   - sonar-scanner
